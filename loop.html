@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>图片轮播</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+</head>
+<body>
+<div id="myCarousel">
+    <div class="carousel-inner">
+        <img class="item active" src="image/1.png">
+        <img class="item" src="image/2.jpg">
+        <img class="item" src="image/3.jpg">
+    </div>
+</div>
+<script src="js/jquery-3.1.1.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script type="text/javascript">
+    $(function () {
+        //轮播自动播放
+        $('#myCarousel').carousel({
+            //自动2秒播放
+            interval : 1000,
+        });
+        //设置垂直居中
+        $(window).resize(function () {
+            var $height = $('.carousel-inner img').eq(0).height() ||
+                    $('.carousel-inner img').eq(1).height() ||
+                    $('.carousel-inner img').eq(2).height();
+        });
+    });
+</script>
+</body>
+</html>
